@@ -1,4 +1,38 @@
+execute pathogen#infect()
 syntax on
+filetype plugin indent on
 
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+map <Leader>rt :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git.pkg --languages=-javascript,sql<CR><CR>
+set tags+=.git/tags
+
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+
+set ruler
+set number
+set laststatus=2
+set scrolloff=3
+
+set nocompatible
+set backspace=indent,eol,start
+set autoindent
+set history=50
+set ruler
+set showcmd
+set incsearch
+set suffixesadd=.rb
+set path+=lib/**,spec/**
+let g:ruby_path = &path
+
+" neckbeard
+let ruby_space_errors = 1
+let c_space_errors = 1
+set colorcolumn=81
+
+" mouse
+set ttyfast
+set mouse=a
+
+" NERDtree
+map <C-n> :NERDTreeToggle<CR>
