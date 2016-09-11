@@ -93,10 +93,6 @@
     # For example, mine is:
     # /Users/avi/.rvm/gems/ruby-1.9.3-p392/bin:/Users/avi/.rvm/gems/ruby-1.9.3-p392@global/bin:/Users/avi/.rvm/rubies/ruby-1.9.3-p392/bin:/Users/avi/.rvm/bin:/usr/local:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/local/mysql/bin:/usr/local/share/python:/bin:/usr/sbin:/sbin:
 
-# Docker
-# =====================
-eval "$(docker-machine env default)"
-
 # Helpful Functions
 # =====================
 
@@ -159,10 +155,57 @@ function extract () {
   alias check="check_everything"
   alias gg="git grep -n"
   alias gap="git add -p"
-  alias gup="git fetch origin next:next && git rebase next"
+  alias gup="git fetch origin master:master && git rebase master"
+  function gpf() {
+    git push --force-with-lease
+  }
 
   # Hub
   alias pr="hub pull-request -b next"
+  function pro() {
+    pr_url=$(hub pull-request -b $1)
+    if [[ $? == 0 ]]; then
+      open $pr_url
+    fi
+  }
+  function prom() { pro master; }
+  function pron() { pro next; }
+
+# Docker
+# =====================
+  eval "$(docker-machine env default)"
+
+  alias cop="docker-compose run web bundle exec rubocop --rails --fail-level autocorrect"
+
+  function dock() {
+    docker-machine start default
+    eval "$(docker-machine env default)"
+  }
+
+  function redock() {
+    docker-machine restart default
+    eval "$(docker-machine env default)"
+  }
+
+  function drspec() {
+    docker-compose run web bundle exec rspec "$@"
+  }
+
+  function drake() {
+    docker-compose run web bundle exec rake "$@"
+  }
+
+  function drails() {
+    docker-compose run web bundle exec rails "$@"
+  }
+
+  function drapes() {
+    drspec -t type:apivore "$@"
+  }
+
+  function safely() {
+    drspec && cop && "$@"
+  }
 
 # Proprietary thingz
 # =====================
