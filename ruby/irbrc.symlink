@@ -4,7 +4,7 @@ require 'irb/ext/save-history'
 require 'rubygems'
 unless require 'awesome_print'
   `gem install awesome_print`
-  require ‘awesome_print’
+  require 'awesome_print'
 end
 
 IRB::Irb.class_eval do
@@ -16,9 +16,6 @@ end
 
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
-
-IRB.conf[:PROMPT_MODE] = :SIMPLE
-
 IRB.conf[:AUTO_INDENT] = true
 
 class Object
