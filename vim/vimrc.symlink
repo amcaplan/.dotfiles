@@ -1,5 +1,12 @@
+set nocp
+if exists('$DOTFILES')
+  source $DOTFILES/vim/autoload/pathogen.vim
+  source $DOTFILES/vim/vimrc
+endif
 execute pathogen#infect()
-syntax on
+syntax enable
+set background=light
+colorscheme solarized
 filetype plugin indent on
 
 map <Leader>rt :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git.pkg --languages=-javascript,sql<CR><CR>
