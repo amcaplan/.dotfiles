@@ -18,9 +18,11 @@ set softtabstop=2
 
 set ruler
 set number
+set relativenumber
 set laststatus=2
 set scrolloff=3
 
+set autoread
 set nocompatible
 set backspace=indent,eol,start
 set autoindent
