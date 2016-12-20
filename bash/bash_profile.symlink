@@ -175,19 +175,7 @@ function extract () {
 
 # Docker
 # =====================
-  eval "$(docker-machine env default)"
-
   alias cop="docker-compose run web bundle exec rubocop --rails --fail-level autocorrect"
-
-  function dock() {
-    docker-machine start default
-    eval "$(docker-machine env default)"
-  }
-
-  function redock() {
-    docker-machine restart default
-    eval "$(docker-machine env default)"
-  }
 
   function drspec() {
     docker-compose run web bundle exec rspec "$@"
