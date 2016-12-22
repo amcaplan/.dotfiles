@@ -31,17 +31,6 @@
   publish = !legit publish \"$@\"
   graft = !legit graft \"$@\"
   branch-clear = !"git br --merged | grep '^[^*]' | xargs git br -d"
-[github]
-  user = amcaplan
-  token = 93905814a8f251bac2e8de80828f0c5add3cccdc
-  email = ariel.caplan@mail.yu.edu
-[github "user"]
-  user = amcaplan
-  token = 93905814a8f251bac2e8de80828f0c5add3cccdc
-  email = ariel.caplan@mail.yu.edu
-[user]
-  name = Ariel Caplan
-  email = ariel.caplan@vitals.com
 [color]
   ui = true
   diff = auto
