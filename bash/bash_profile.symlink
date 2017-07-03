@@ -170,7 +170,6 @@ function extract () {
   }
 
   # Hub
-  alias pr="hub pull-request -b next"
   function pro() {
     pr_url=$(hub pull-request -b $1)
     if [[ $? == 0 ]]; then
