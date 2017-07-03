@@ -159,6 +159,10 @@ function extract () {
   function gpf() {
     git push --force-with-lease
   }
+  function fixup() {
+    git commit --fixup $1
+    git rebase -i $1^^ --autosquash
+  }
 
   # Hub
   alias pr="hub pull-request -b next"
