@@ -202,6 +202,10 @@ function extract () {
     drspec -t type:apivore "$@"
   }
 
+  function drunit() {
+    drspec -t ~type:apivore "$@"
+  }
+
   function safely() {
     drspec && cop && "$@"
   }
