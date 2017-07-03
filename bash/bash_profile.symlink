@@ -137,6 +137,11 @@ function extract () {
     fi
 }
 
+# Configuration
+# =====================
+  # Somehow this enables CTRL+s for forward history search
+  stty -ixon
+
 # Aliases
 # =====================
   # LS
