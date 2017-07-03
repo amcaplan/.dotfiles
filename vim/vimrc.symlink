@@ -51,3 +51,7 @@ set mouse=a
 
 " NERDtree
 map <C-n> :NERDTreeToggle<CR>
+
+" Store swapfiles elsewhere
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swp//
