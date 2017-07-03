@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/acaplan/Development/code/brainruby'
+let g:netrw_dirhist_2='/Users/acaplan/.vagrant.d/gems'
+let g:netrw_dirhist_3='/Users/acaplan/Development/code/rails_engines_railsconf_2016/feedback'
+let g:netrw_dirhist_4='/Users/acaplan/Downloads'
