@@ -27,6 +27,7 @@ set number
 set relativenumber
 set laststatus=2
 set scrolloff=3
+set eol
 
 set autoread
 set nocompatible
@@ -39,6 +40,7 @@ set incsearch
 set suffixesadd=.rb
 set path+=lib/**,spec/**
 let g:ruby_path = &path
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " neckbeard
 let ruby_space_errors = 1
