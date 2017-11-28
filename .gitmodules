@@ -54,3 +54,7 @@
   path = vim/.vim.symlink/bundle/vim-unimpaired
   url = git://github.com/tpope/vim-unimpaired.git
   ignore = dirty
+[submodule "typescript-vim"]
+  path = vim/.vim.symlink/bundle/typescript-vim
+  url = git://github.com/leafgarland/typescript-vim.git
+  ignore = dirty
