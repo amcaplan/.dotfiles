@@ -166,7 +166,7 @@ function extract () {
   }
   function fixup() {
     git commit --fixup $1
-    git rebase -i $1^^ --autosquash
+    GIT_SEQUENCE_EDITOR=touch git rebase -i $1^^ --autosquash --autostash
   }
 
   # Hub
