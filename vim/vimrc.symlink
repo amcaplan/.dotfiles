@@ -4,13 +4,19 @@ if exists('$DOTFILES')
   source $DOTFILES/vim/vimrc
 endif
 execute pathogen#infect()
+call pathogen#helptags()
+
+filetype off
 syntax enable
+autocmd BufWinEnter * if line2byte(line("$") + 1) > 1000000 | syntax off | else | syntax on | endif
+
 set background=light
 colorscheme solarized
 filetype plugin indent on
 
 map <Leader>rt :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git.pkg --languages=-javascript,sql<CR><CR>
 set tags+=.git/tags
+nnoremap <leader>. :CtrlPTag<cr>
 
 set expandtab
 set shiftwidth=2
@@ -21,6 +27,11 @@ autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
 autocmd Filetype php setlocal ts=4 sw=4 expandtab
 autocmd Filetype org setlocal cc=70
+autocmd Filetype go setlocal ts=8 sw=8 noexpandtab
+
+" Keep Vim Fast! https://github.com/chrishunt/dot-files/issues/5#issuecomment-350067217
+autocmd Filetype ruby setlocal nocursorline
+autocmd Filetype ruby setlocal norelativenumber
 
 set ruler
 set number
@@ -40,7 +51,7 @@ set incsearch
 set suffixesadd=.rb
 set path+=lib/**,spec/**
 let g:ruby_path = &path
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist'
 
 " neckbeard
 let ruby_space_errors = 1
@@ -60,7 +71,7 @@ set directory=~/.vim/swp//
 
 " Multiple cursors
 let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_next_key='<C-j>'
 let g:multi_cursor_prev_key='<C-m>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
