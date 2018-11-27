@@ -187,6 +187,7 @@ function extract () {
   }
   function prom() { pro master; }
   function pron() { pro next; }
+  function prod() { pro develop; }
 
   alias icloud='cd ~/Library/Mobile\ Documents/'
 
