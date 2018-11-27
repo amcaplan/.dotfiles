@@ -163,7 +163,13 @@ function extract () {
   alias check="check_everything"
   alias gg="git grep -n"
   alias gap="git add -p"
-  alias gup="git fetch origin master:master && git rebase master"
+  function gup() {
+    if [ -z "$1" ]; then
+      git fetch origin ${1}:${1} && git rebase ${1}
+    else
+      git fetch origin master:master && git rebase master
+    fi
+  }
   function gpf() {
     git push --force-with-lease
   }
