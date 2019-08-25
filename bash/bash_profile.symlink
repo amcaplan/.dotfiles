@@ -12,7 +12,7 @@
   bind "set show-all-if-ambiguous on"
 
   # This function is called in your prompt to output your active git branch.
-  function parse_git_branch {
+  function parse_git_branch() {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
   }
 
@@ -140,6 +140,23 @@ function extract () {
     fi
 }
 
+# Protect from accidental exits of the shell
+# https://apple.stackexchange.com/a/219997
+function exit () {
+    read -t5 -n1 -p "Do you really wish to exit? [yN] " should_exit || should_exit=y
+    case $should_exit in
+        [Yy] ) builtin exit $1 ;;
+        * ) printf "\n" ;;
+    esac
+}
+
+# Presentation
+# =====================
+  # Syntax highlighting for less
+  export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
+  export LESS=" -R "
+  alias less='less -m -N -g -i -J --underline-special --SILENT'
+
 # Configuration
 # =====================
   # Somehow this enables CTRL+s for forward history search
@@ -155,19 +172,29 @@ function extract () {
   alias gst="git status"
   alias gl="git pull"
   alias gp="git push"
-  alias gd="git diff | mvim - -d -f -R"
+  function gd() {
+    git diff "$@" | mvim - -d -f -R
+  }
   alias gc="git commit -v"
   alias gca="git commit -v -a"
   alias gb="git branch"
   alias gba="git branch -a"
   alias check="check_everything"
   alias gg="git grep -n"
+  # git grep decorated with blame
+  function ggb() {
+    git grep -n $1 | while IFS=: read i j k; do git blame -L $j,$j $i | cat; done
+  }
+  # ...and return the top hits
+  function ggbt() {
+    ggb $@ | sort -t' ' -k4 -r | head -10
+  }
   alias gap="git add -p"
   function gup() {
     if [ -z "$1" ]; then
-      git fetch origin ${1}:${1} && git rebase ${1}
+      git fetch origin master:master && git rebase master --autostash
     else
-      git fetch origin master:master && git rebase master
+      git fetch origin ${1}:${1} && git rebase ${1} --autostash
     fi
   }
   function gpf() {

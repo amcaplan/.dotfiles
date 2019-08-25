@@ -31,6 +31,9 @@
   publish = !legit publish \"$@\"
   graft = !legit graft \"$@\"
   branch-clear = !"git br --merged | grep '^[^*]' | xargs git br -d"
+
+  # https://github.com/not-an-aardvark/git-delete-squashed
+  branch-clear-squashed = !"git checkout -q master && git for-each-ref refs/heads/ \"--format=%(refname:short)\" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == \"-\"* ]] && git branch -D $branch; done"
 [color]
   ui = true
   diff = auto

@@ -2,9 +2,27 @@
 require 'irb/completion'
 require 'irb/ext/save-history'
 require 'rubygems'
-unless require 'awesome_print'
-  `gem install awesome_print`
-  require 'awesome_print'
+if defined?(Bundler)
+  Gem.post_reset_hooks.reject! do |hook|
+    hook.source_location.first =~ %r{/bundler/}
+  end
+
+  Gem::Specification.reset
+  load "rubygems/custom_require.rb"
+end
+
+%w(
+  awesome_print
+  pry
+  pry-nav
+  pry-coolline
+  pry-doc
+).each do |gem|
+  begin
+    require gem
+  rescue LoadError
+    warn "#{gem} is not installed."
+  end
 end
 
 IRB::Irb.class_eval do
@@ -54,3 +72,6 @@ end
 def r
   reload!
 end
+
+Pry.start if defined?(Pry)
+exit
