@@ -62,3 +62,9 @@
   path = vim/.vim.symlink/bundle/vim-multiple-cursors
   url = git://github.com/terryma/vim-multiple-cursors.git
   ignore = dirty
+[submodule "vim/.vim.symlink/bundle/vim-numbertoggle"]
+	path = vim/.vim.symlink/bundle/vim-numbertoggle
+	url = git://github.com/tzvetkoff/vim-numbertoggle
+[submodule "vim/.vim.symlink/bundle/vim-reason-plus"]
+	path = vim/.vim.symlink/bundle/vim-reason-plus
+	url = git://github.com/reasonml-editor/vim-reason-plus
