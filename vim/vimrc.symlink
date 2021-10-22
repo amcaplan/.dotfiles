@@ -36,6 +36,10 @@ autocmd Filetype go setlocal ts=8 sw=8 noexpandtab
 " autocmd Filetype ruby setlocal nocursorline
 " autocmd Filetype ruby setlocal norelativenumber
 
+" pretty logs!
+" autocmd Filetype railslog ColorHighlight
+autocmd BufWinEnter *.log ColorHighlight
+
 set ruler
 set number
 set relativenumber
