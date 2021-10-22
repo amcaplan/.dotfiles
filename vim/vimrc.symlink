@@ -15,6 +15,7 @@ colorscheme solarized
 filetype plugin indent on
 
 map <Leader>rt :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git.pkg --languages=-javascript,sql<CR><CR>
+map <Leader>rr <Esc>:!ruby %<CR>
 map <Leader>p <Esc>obinding.pry<Esc>==
 map <Leader>P <Esc>Obinding.pry<Esc>==
 set tags+=.git/tags
