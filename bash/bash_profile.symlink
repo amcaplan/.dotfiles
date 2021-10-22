@@ -215,6 +215,14 @@ function exit () {
   function prom() { pro master; }
   function pron() { pro next; }
   function prod() { pro develop; }
+  function approve() {
+    regex="(https?://)?github.com/(.+)/(.+)/pull/([0-9]+)"
+    if [[ $1 =~ $regex ]]; then
+      hub api /repos/${BASH_REMATCH[2]}/${BASH_REMATCH[3]}/pulls/${BASH_REMATCH[4]}/reviews --field event=APPROVE;
+    else
+      echo "Valid PR URL not provided\!";
+    fi
+  }
 
   alias icloud='cd ~/Library/Mobile\ Documents/'
 
