@@ -25,10 +25,12 @@ end
   end
 end
 
-IRB::Irb.class_eval do
-  def output_value
-    print "=> "
-    ap @context.last_value
+if RUBY_VERSION < '3'
+  IRB::Irb.class_eval do
+    def output_value
+      print "=> "
+      ap @context.last_value
+    end
   end
 end
 
