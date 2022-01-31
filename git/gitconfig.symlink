@@ -1,10 +1,15 @@
 # Local/private config goes in the include
 [include]
         path = ~/.gitconfig.local
+[user]
+  name = Ariel Caplan
+[hub]
+  protocol = ssh
 [core]
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
   excludesfile = ~/.gitignore
   editor = mvim
+	commitGraph = true
 [alias]
   st = status
   ci = commit
@@ -63,7 +68,23 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
-[url "git@github.com:"]
-	insteadOf = https://github.com/
 [pull]
 	rebase = true
+[credential]
+	helper = 
+	helper = store --file /opt/dev/var/private/git_credential_store
+[diff]
+	algorithm = patience
+[gc]
+	writeCommitGraph = true
+[protocol]
+	version = 2
+[url "https://github.com/Shopify/"]
+	insteadOf = git@github.com:Shopify/
+	insteadOf = git@github.com:shopify/
+	insteadOf = ssh://git@github.com/Shopify/
+	insteadOf = ssh://git@github.com/shopify/
+[commit]
+	gpgSign = false
+[gpg]
+	program = /usr/local/bin/gpg
