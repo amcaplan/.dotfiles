@@ -55,7 +55,8 @@ set incsearch
 set suffixesadd=.rb
 set path+=lib/**,spec/**
 let g:ruby_path = &path
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git\|dist'
+let g:ctrlp_max_files=0
 
 " neckbeard
 let ruby_space_errors = 1
