@@ -43,8 +43,6 @@ done
 unset config_files
 
 # [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
 
 # export TERM="xterm-color"
 # PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
@@ -312,3 +310,5 @@ function exit () {
     . `brew --prefix`/etc/bash_completion
   fi
 
+[[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
+[[ -f /opt/dev/sh/chruby/auto.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/auto.sh; }
