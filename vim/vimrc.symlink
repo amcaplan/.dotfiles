@@ -103,3 +103,11 @@ nmap ,cr :let @*=join(['rspec', join([expand('%'),  line(".")], ':')], ' ')<CR>
 
 " CoC extensions
 let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint']
+
+" Fuzzy finding
+" 
+" Must first run:
+" brew install fzf
+" $(brew --prefix)/opt/fzf/install
+set rtp+=/usr/local/opt/fzf
+nmap <C-P> :FZF<CR>

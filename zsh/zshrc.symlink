@@ -314,3 +314,5 @@ function exit () {
 [[ -f /opt/dev/sh/chruby/auto.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/auto.sh; }
 
 [[ -x /usr/local/bin/brew ]] && eval $(/usr/local/bin/brew shellenv)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
