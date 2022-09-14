@@ -100,3 +100,6 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 nmap ,cs :let @*=join([expand('%'),  line(".")], ':')<CR>
 " Copy filepath and line number for running rspec
 nmap ,cr :let @*=join(['rspec', join([expand('%'),  line(".")], ':')], ' ')<CR>
+
+" CoC extensions
+let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint']
