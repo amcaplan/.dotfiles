@@ -63,11 +63,18 @@
   url = git://github.com/terryma/vim-multiple-cursors.git
   ignore = dirty
 [submodule "vim/.vim.symlink/bundle/vim-numbertoggle"]
-	path = vim/.vim.symlink/bundle/vim-numbertoggle
-	url = git://github.com/tzvetkoff/vim-numbertoggle
+  path = vim/.vim.symlink/bundle/vim-numbertoggle
+  url = git://github.com/tzvetkoff/vim-numbertoggle
+  ignore = dirty
 [submodule "vim/.vim.symlink/bundle/vim-reason-plus"]
-	path = vim/.vim.symlink/bundle/vim-reason-plus
-	url = git://github.com/reasonml-editor/vim-reason-plus
+  path = vim/.vim.symlink/bundle/vim-reason-plus
+  url = git://github.com/reasonml-editor/vim-reason-plus
+  ignore = dirty
 [submodule "vim/.vim.symlink/bundle/coc.nvim"]
-	path = vim/.vim.symlink/bundle/coc.nvim
-	url = https://github.com/neoclide/coc.nvim
+  path = vim/.vim.symlink/bundle/coc.nvim
+  url = git@github.com/neoclide/coc.nvim
+  ignore = dirty
+[submodule "vim/.vim.symlink/bundle/vim-jsx-pretty"]
+  path = vim/.vim.symlink/bundle/vim-jsx-pretty
+  url = git@github.com:MaxMEllon/vim-jsx-pretty.git
+  ignore = dirty
