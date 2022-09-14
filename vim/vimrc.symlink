@@ -43,6 +43,7 @@ set relativenumber
 set laststatus=2
 set scrolloff=3
 set eol
+set splitright
 
 set autoread
 set nocompatible
@@ -69,6 +70,8 @@ set mouse=a
 
 " NERDtree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen = 0
+let g:NERDTreeQuitOnOpen = 0
 
 " NERDCommenter
 let g:NERDSpaceDelims = 1
