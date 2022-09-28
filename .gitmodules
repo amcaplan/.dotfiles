@@ -1,80 +1,80 @@
 [submodule "ctrlp.vim"]
   path = vim/.vim.symlink/bundle/ctrlp.vim
-  url = git@github.com:ctrlpvim/ctrlp.vim.git
+  url = https://github.com/ctrlpvim/ctrlp.vim.git
   ignore = dirty
 [submodule "editorconfig-vim"]
   path = vim/.vim.symlink/bundle/editorconfig-vim
-  url = git://github.com/editorconfig/editorconfig-vim.git
+  url = https://github.com/editorconfig/editorconfig-vim.git
   ignore = dirty
 [submodule "nerdcommenter"]
   path = vim/.vim.symlink/bundle/nerdcommenter
-  url = git@github.com:scrooloose/nerdcommenter.git
+  url = https://github.com/scrooloose/nerdcommenter.git
   ignore = dirty
 [submodule "nerdtree"]
   path = vim/.vim.symlink/bundle/nerdtree
-  url = git@github.com:scrooloose/nerdtree.git
+  url = https://github.com/scrooloose/nerdtree.git
   ignore = dirty
 [submodule "vim-airline"]
   path = vim/.vim.symlink/bundle/vim-airline
-  url = git@github.com:vim-airline/vim-airline.git
+  url = https://github.com/vim-airline/vim-airline.git
   ignore = dirty
 [submodule "vim-bundler"]
   path = vim/.vim.symlink/bundle/vim-bundler
-  url = git://github.com/tpope/vim-bundler.git
+  url = https://github.com/tpope/vim-bundler.git
   ignore = dirty
 [submodule "vim-colors-solarized"]
   path = vim/.vim.symlink/bundle/vim-colors-solarized
-  url = git://github.com/altercation/vim-colors-solarized.git
+  url = https://github.com/altercation/vim-colors-solarized.git
   ignore = dirty
 [submodule "vim-ember-hbs"]
   path = vim/.vim.symlink/bundle/vim-ember-hbs
-  url = git@github.com:joukevandermaas/vim-ember-hbs.git
+  url = https://github.com/joukevandermaas/vim-ember-hbs.git
   ignore = dirty
 [submodule "vim-fugitive"]
   path = vim/.vim.symlink/bundle/vim-fugitive
-  url = git://github.com/tpope/vim-fugitive.git
+  url = https://github.com/tpope/vim-fugitive.git
   ignore = dirty
 [submodule "vim-nand2tetris-syntax"]
   path = vim/.vim.symlink/bundle/vim-nand2tetris-syntax
-  url = git@github.com:sevko/vim-nand2tetris-syntax.git
+  url = https://github.com/sevko/vim-nand2tetris-syntax.git
   ignore = dirty
 [submodule "vim-rails"]
   path = vim/.vim.symlink/bundle/vim-rails
-  url = git://github.com/tpope/vim-rails.git
+  url = https://github.com/tpope/vim-rails.git
   ignore = dirty
 [submodule "vim-sensible"]
   path = vim/.vim.symlink/bundle/vim-sensible
-  url = git://github.com/tpope/vim-sensible.git
+  url = https://github.com/tpope/vim-sensible.git
   ignore = dirty
 [submodule "vim-surround"]
   path = vim/.vim.symlink/bundle/vim-surround
-  url = git://github.com/tpope/vim-surround.git
+  url = https://github.com/tpope/vim-surround.git
   ignore = dirty
 [submodule "vim-unimpaired"]
   path = vim/.vim.symlink/bundle/vim-unimpaired
-  url = git://github.com/tpope/vim-unimpaired.git
+  url = https://github.com/tpope/vim-unimpaired.git
   ignore = dirty
 [submodule "typescript-vim"]
   path = vim/.vim.symlink/bundle/typescript-vim
-  url = git://github.com/leafgarland/typescript-vim.git
+  url = https://github.com/leafgarland/typescript-vim.git
   ignore = dirty
 [submodule "vim-multiple-cursors"]
   path = vim/.vim.symlink/bundle/vim-multiple-cursors
-  url = git://github.com/terryma/vim-multiple-cursors.git
+  url = https://github.com/terryma/vim-multiple-cursors.git
   ignore = dirty
 [submodule "vim/.vim.symlink/bundle/vim-numbertoggle"]
   path = vim/.vim.symlink/bundle/vim-numbertoggle
-  url = git://github.com/tzvetkoff/vim-numbertoggle
+  url = https://github.com/tzvetkoff/vim-numbertoggle
   ignore = dirty
 [submodule "vim/.vim.symlink/bundle/vim-reason-plus"]
   path = vim/.vim.symlink/bundle/vim-reason-plus
-  url = git://github.com/reasonml-editor/vim-reason-plus
+  url = https://github.com/reasonml-editor/vim-reason-plus
   ignore = dirty
 [submodule "vim/.vim.symlink/bundle/coc.nvim"]
   path = vim/.vim.symlink/bundle/coc.nvim
-  url = git@github.com/neoclide/coc.nvim
+  url = https://github.com/neoclide/coc.nvim
   ignore = dirty
 [submodule "vim/.vim.symlink/bundle/vim-jsx-pretty"]
   path = vim/.vim.symlink/bundle/vim-jsx-pretty
-  url = git@github.com:MaxMEllon/vim-jsx-pretty.git
+  url = https://github.com/MaxMEllon/vim-jsx-pretty.git
   ignore = dirty
