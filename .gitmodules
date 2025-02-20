@@ -81,3 +81,6 @@
 [submodule "vim/.vim.symlink/bundle/fzf"]
 	path = vim/.vim.symlink/bundle/fzf
 	url = https://github.com/junegunn/fzf
+[submodule "vim/.vim.symlink/pack/github/start/copilot.vim"]
+	path = vim/.vim.symlink/pack/github/start/copilot.vim
+	url = https://github.com/github/copilot.vim.git
