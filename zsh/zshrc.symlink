@@ -222,7 +222,7 @@ function exit () {
   alias gb="git branch"
   alias gba="git branch -a"
   alias check="check_everything"
-  alias gg="git grep -n"
+  alias gg="git grep -n --color=always"
   # git grep decorated with blame
   function ggb() {
     git grep -n $1 | while IFS=: read i j k; do git blame -L $j,$j $i | cat; done
@@ -231,7 +231,26 @@ function exit () {
   function ggbt() {
     ggb $@ | sort -t' ' -k4 -r | head -10
   }
-  alias gap="git add -p"
+  # Better version of git add -p
+  function gap() {
+    # Switch to a subshell to change directory
+    (
+      # Change to the root of the Git repository
+      cd "$(git rev-parse --show-toplevel)" || exit
+
+      # Stage new files interactively
+      for file in $(git ls-files --others --exclude-standard); do
+        echo -n "Add new file '$file'? (y/n) "
+        read choice
+        if [[ $choice == "y" ]]; then
+          git add "$file"
+        fi
+      done
+
+      # Now run git add -p for modified files
+      git add -p
+    )
+  }
   function gup() {
     if [ -z "$1" ]; then
       git fetch origin master:master && git rebase master --autostash
@@ -249,10 +268,7 @@ function exit () {
 
   # Hub
   function pro() {
-    pr_url=$(hub pull-request -b $1)
-    if [[ $? == 0 ]]; then
-      open $pr_url
-    fi
+    gh pr create --web -B $1
   }
   function prom() { pro master; }
   function pron() { pro next; }
