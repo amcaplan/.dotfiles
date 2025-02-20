@@ -29,6 +29,23 @@ autocmd Filetype php setlocal ts=4 sw=4 expandtab
 autocmd Filetype org setlocal cc=70
 autocmd Filetype go setlocal ts=8 sw=8 noexpandtab
 
+" coc https://github.com/neoclide/coc.nvim
+
+" Use tab for trigger completion with characters ahead and navigate
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+autocmd BufWritePre *.js,*ts,*tsx :CocCommand eslint.executeAutofix
+
 " Keep Vim Fast! https://github.com/chrishunt/dot-files/issues/5#issuecomment-350067217
 " autocmd Filetype ruby setlocal nocursorline
 " autocmd Filetype ruby setlocal norelativenumber
