@@ -64,16 +64,8 @@
         whitespace = nowarn
 [help]
         autocorrect = 1
-[filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
 [pull]
 	rebase = true
-[credential]
-	helper = 
-	helper = store --file /opt/dev/var/private/git_credential_store
 [diff]
 	algorithm = patience
 [gc]
@@ -89,3 +81,12 @@
 	gpgSign = false
 [gpg]
 	program = /usr/local/bin/gpg
+[init]
+	defaultBranch = main
+[rebase]
+	updateRefs = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

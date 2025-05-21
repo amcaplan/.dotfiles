@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 require 'irb/completion'
-require 'irb/ext/save-history'
+require 'irb/ext/eval_history' rescue nil
 require 'rubygems'
 if defined?(Bundler)
   Gem.post_reset_hooks.reject! do |hook|
@@ -8,7 +8,7 @@ if defined?(Bundler)
   end
 
   Gem::Specification.reset
-  load "rubygems/custom_require.rb"
+  # load "rubygems/custom_require.rb"
 end
 
 %w(
@@ -75,5 +75,5 @@ def r
   reload!
 end
 
-Pry.start if defined?(Pry)
-exit
+# Pry.start if defined?(Pry)
+# exit
